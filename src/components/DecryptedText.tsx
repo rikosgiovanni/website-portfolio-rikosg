@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useMemo, useCallback } from 'react';
 import { motion, type HTMLMotionProps } from 'framer-motion';
+import { useAudio } from './AudioProvider';
 
 const styles = {
   wrapper: {
@@ -61,6 +62,7 @@ export default function DecryptedText({
   const orderRef = useRef<number[]>([]);
   const pointerRef = useRef(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const { playDecryptSound } = useAudio();
 
   const availableChars = useMemo(() => {
     return useOriginalCharsOnly
@@ -135,6 +137,8 @@ export default function DecryptedText({
   }, [text, shuffleText]);
 
   const triggerDecrypt = useCallback(() => {
+    if (isDecrypted) return;
+    playDecryptSound();
     if (sequential) {
       orderRef.current = computeOrder(text.length);
       pointerRef.current = 0;
@@ -144,7 +148,7 @@ export default function DecryptedText({
     }
     setDirection('forward');
     setIsAnimating(true);
-  }, [sequential, computeOrder, text.length]);
+  }, [sequential, computeOrder, text.length, isDecrypted, playDecryptSound]);
 
   const triggerReverse = useCallback(() => {
     if (sequential) {
@@ -302,13 +306,14 @@ export default function DecryptedText({
 
   const triggerHoverDecrypt = useCallback(() => {
     if (isAnimating) return;
+    playDecryptSound();
 
     setRevealedIndices(new Set());
     setIsDecrypted(false);
     setDisplayText(text);
     setDirection('forward');
     setIsAnimating(true);
-  }, [isAnimating, text]);
+  }, [isAnimating, text, playDecryptSound]);
 
   const resetToPlainText = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);

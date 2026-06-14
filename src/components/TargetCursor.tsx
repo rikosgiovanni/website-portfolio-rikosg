@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import { gsap } from 'gsap';
 import './TargetCursor.css';
+import { useAudio } from './AudioProvider';
 
 // A position: fixed element is positioned relative to the viewport UNLESS an
 // ancestor establishes a containing block (transform, perspective, filter,
@@ -53,6 +54,7 @@ const TargetCursor = ({
   const spinTl = useRef<gsap.core.Timeline | null>(null);
   const dotRef = useRef<HTMLDivElement>(null);
   const containingBlockRef = useRef<HTMLElement | null>(null);
+  const { playHoverSound } = useAudio();
 
   const isActiveRef = useRef(false);
   const targetCornerPositionsRef = useRef<{ x: number; y: number }[] | null>(null);
@@ -231,6 +233,8 @@ const TargetCursor = ({
         resumeTimeout = null;
       }
 
+      playHoverSound();
+
       activeTarget = target;
       const corners = Array.from(cornersRef.current);
       corners.forEach(corner => gsap.killTweensOf(corner));
@@ -360,7 +364,7 @@ const TargetCursor = ({
       targetCornerPositionsRef.current = null;
       activeStrengthRef.current.current = 0;
     };
-  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hasMoved, hoverDuration, parallaxOn]);
+  }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hasMoved, hoverDuration, parallaxOn, playHoverSound]);
 
   useEffect(() => {
     if (isMobile || !hasMoved || !cursorRef.current || !spinTl.current) return;

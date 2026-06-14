@@ -3,11 +3,13 @@ import { gsap } from 'gsap';
 import { useNavigate } from 'react-router';
 import PixelBlast from '@/components/PixelBlast';
 import { GlobeIcon } from '@/components/GlobeIcon';
+import { useAudio } from '@/components/AudioProvider';
 
 export default function Landing() {
   const sectionRef = useRef<HTMLElement>(null);
   const monologRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const { playBackgroundMusic } = useAudio();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,6 +38,7 @@ export default function Landing() {
   }, []);
 
   const handleProceed = () => {
+    playBackgroundMusic(); // Explicitly start the website music
     navigate('/home');
   };
 

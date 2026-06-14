@@ -3,6 +3,8 @@ import { Volume2, VolumeX, Menu, X } from 'lucide-react';
 import { useNavigate, useLocation, Link } from 'react-router';
 import { PillButton } from './PillButton';
 
+import { useAudio } from './AudioProvider';
+
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#work' },
@@ -11,7 +13,7 @@ const navLinks = [
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const { isMuted, toggleMute } = useAudio();
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -80,7 +82,7 @@ export function Navigation() {
             <div className="flex items-center gap-3">
               {/* Audio Toggle */}
               <button
-                onClick={() => setIsMuted(!isMuted)}
+                onClick={toggleMute}
                 className="w-9 h-9 rounded-full bg-monolog-cream-dark flex items-center justify-center text-monolog-muted hover:text-monolog-text transition-colors"
                 aria-label={isMuted ? 'Unmute' : 'Mute'}
               >
