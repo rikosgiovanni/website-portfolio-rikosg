@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/website-portfolio-rikosg/',
   plugins: [react()],
   server: {
     port: 3000,
