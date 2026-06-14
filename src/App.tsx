@@ -5,6 +5,7 @@ import { GrainOverlay } from '@/components/GrainOverlay';
 import { Navigation } from '@/components/Navigation';
 import TargetCursor from '@/components/TargetCursor';
 import Home from '@/pages/Home';
+import Landing from '@/pages/Landing';
 import ExperienceDetail from '@/pages/ExperienceDetail';
 import Contact from '@/pages/Contact';
 
@@ -34,7 +35,8 @@ function App() {
       <Navigation />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/work/:id" element={<ExperienceDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>

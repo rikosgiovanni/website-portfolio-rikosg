@@ -44,29 +44,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="flex gap-4 mb-12"
             >
-              <a 
-                href="tel:+628123456789" 
-                className="flex-1 bg-[#2d2d2d] hover:bg-[#3d3d3d] transition-colors rounded-xl py-4 flex flex-col items-center gap-2 group"
-              >
-                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Call</span>
-              </a>
-              <a 
-                href="mailto:giovanniriko@gmail.com" 
-                className="flex-1 bg-[#2d2d2d] hover:bg-[#3d3d3d] transition-colors rounded-xl py-4 flex flex-col items-center gap-2 group"
-              >
-                <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Email</span>
-              </a>
-              <a 
-                href="https://maps.google.com/?q=Bandung,Indonesia" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-[#2d2d2d] hover:bg-[#3d3d3d] transition-colors rounded-xl py-4 flex flex-col items-center gap-2 group"
-              >
-                <MapPin className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] uppercase tracking-widest font-bold opacity-60">Route</span>
-              </a>
+       
             </motion.div>
 
             {/* Contact Info Blocks */}
@@ -76,10 +54,6 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
               className="space-y-4"
             >
-              <div className="bg-[#2d2d2d] rounded-xl p-6">
-                <span className="text-[10px] uppercase tracking-widest font-bold text-gray-500 block mb-1">Phone</span>
-                <p className="text-lg md:text-xl font-medium">+62 812 3456 7890</p>
-              </div>
               <div className="bg-[#2d2d2d] rounded-xl p-6">
                 <span className="text-[10px] uppercase tracking-widest font-bold text-gray-500 block mb-1">Email</span>
                 <p className="text-lg md:text-xl font-medium">giovanniriko@gmail.com</p>

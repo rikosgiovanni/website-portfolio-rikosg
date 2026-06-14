@@ -158,10 +158,7 @@ export function AwardsFooterSection() {
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-[10px] text-gray-500 uppercase tracking-widest hover:text-white transition-colors">
-              Data Protection
-            </a>
-            <a href="#" className="text-[10px] text-gray-500 uppercase tracking-widest hover:text-white transition-colors">
-              Imprint
+              Bandung, Indonesia
             </a>
           </div>
         </div>

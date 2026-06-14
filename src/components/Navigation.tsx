@@ -16,6 +16,8 @@ export function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const isLanding = location.pathname === '/';
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -24,12 +26,14 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (isLanding) return null;
+
   const scrollToSection = (href: string) => {
     setMobileOpen(false);
     
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/home') {
       // If not on home page, navigate home with hash
-      navigate('/' + href);
+      navigate('/home' + href);
     } else {
       // If on home page, just scroll
       const el = document.querySelector(href);
@@ -49,7 +53,7 @@ export function Navigation() {
         <div className="max-w-[1800px] mx-auto px-gutter flex items-center justify-between h-20">
           {/* Logo */}
           <Link 
-            to="/" 
+            to="/home" 
             className="flex items-center" 
             onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           >
