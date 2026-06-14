@@ -150,7 +150,7 @@ export const experiences: ExperienceCard[] = [
     id: '2',
     category: 'Impact & Leadership',
     title: 'Google',
-    role: 'Google Student Ambassador',
+    role: 'Google Student Ambassador 2026',
     date: 'Apr 2026 – Present',
     location: 'Bandung, West Java, Indonesia',
     description: 'Serving as the primary campus representative for Google, driving adoption of AI technologies and empowering students to leverage digital tools for productivity, research, and innovation.',
