@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router';
 import profileImg from '@/assets/profile.jpg';
-
+//test
 export default function Contact() {
   return (
     <div className="relative min-h-screen bg-[#1c1c1c] text-white font-sans overflow-x-hidden">

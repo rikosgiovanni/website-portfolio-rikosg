@@ -6,14 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const manifestoText = "I aim to bridge complex technologies with tangible impact, transforming data and AI tools into insights that empower communities and businesses. The gap between raw data and meaningful action is where I thrive.";
 
-const clientLogos = [
-  { name: 'Google Student Ambassador', initials: 'GSA' },
-  { name: 'ITB Jazz', initials: 'ITBJ' },
-  { name: 'HMIF ITB', initials: 'HMIF' },
-  { name: 'GDGoC ITB', initials: 'GDG' },
-  { name: 'Surakarta Highschool Christian Forum', initials: 'SHCF' },
-  { name: 'Inkubator IT', initials: 'IIT' },
-];
+
 
 export function StatsManifestoSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -59,23 +52,6 @@ export function StatsManifestoSection() {
         );
       }
 
-      // Client logos
-      gsap.fromTo(
-        '.client-logo',
-        { opacity: 0, y: 20 },
-        {
-          opacity: 0.6,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '.client-logos-row',
-            start: 'top 90%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -122,19 +98,7 @@ export function StatsManifestoSection() {
           </p>
         </div>
 
-        {/* Client Logos */}
-        <div className="client-logos-row flex flex-wrap items-center gap-8 lg:gap-12">
-          {clientLogos.map((logo) => (
-            <div
-              key={logo.name}
-              className="client-logo font-body text-lg uppercase tracking-[0.1em] text-monolog-text hover:opacity-100 transition-opacity duration-300 cursor-default"
-              style={{ opacity: 0.6 }}
-              title={logo.name}
-            >
-              {logo.initials}
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

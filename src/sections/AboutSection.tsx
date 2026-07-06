@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import DecryptedText from '@/components/DecryptedText';
 import LogoLoop from '@/components/LogoLoop';
+import { PillButton } from '@/components/PillButton';
 import { 
   SiPython, 
   SiMysql, 
@@ -71,11 +72,19 @@ export function AboutSection() {
               About the developer
             </p>
 
+
             {/* Studio Info */}
             <div className="space-y-1">
               <p className="font-body text-subheading uppercase tracking-[0.05em] text-monolog-muted">
-                BASED IN BANDUNG, INDONESIA
+                BASED IN JAKARTA, INDONESIA
               </p>
+            </div>
+
+            {/* CV Button */}
+            <div className="pt-2 pb-4">
+              <PillButton href="https://drive.google.com/file/d/1MRTxsifG18qunxVNeqPGD72Exi7l8aui/view?usp=sharing">
+                View My CV
+              </PillButton>
             </div>
 
             {/* Keywords */}

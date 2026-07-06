@@ -37,8 +37,8 @@ export default function Home() {
       <AboutSection />
       <StatsManifestoSection />
       <GapSection />
-      <Experience />
       <ProjectsTimelineSection />
+      <Experience />
       <TestimonialsSection />
       <ServicesSection />
       <FAQSection />

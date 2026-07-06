@@ -7,8 +7,8 @@ import { useAudio } from './AudioProvider';
 
 const navLinks = [
   { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#work' },
   { label: 'Project', href: '#projects' },
+  { label: 'Experience', href: '#work' },
 ];
 
 export function Navigation() {

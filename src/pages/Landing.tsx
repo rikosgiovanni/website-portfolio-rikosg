@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useNavigate } from 'react-router';
-import PixelBlast from '@/components/PixelBlast';
 import { GlobeIcon } from '@/components/GlobeIcon';
 import { useAudio } from '@/components/AudioProvider';
 
@@ -47,29 +46,6 @@ export default function Landing() {
       ref={sectionRef}
       className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden bg-monolog-dark"
     >
-      {/* PixelBlast Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-100">
-        <PixelBlast
-          variant="circle"
-          pixelSize={6}
-          color="#263647"
-          patternScale={3}
-          patternDensity={1.5}
-          pixelSizeJitter={0.5}
-          enableRipples={true}
-          rippleSpeed={0.4}
-          rippleThickness={0.15}
-          rippleIntensityScale={2.0}
-          liquid={true}
-          liquidStrength={0.15}
-          liquidRadius={1.5}
-          liquidWobbleSpeed={6}
-          speed={0.6}
-          edgeFade={0.3}
-          transparent={true}
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-gutter w-full max-w-[1400px] mx-auto">
         {/* Globe Icon */}
